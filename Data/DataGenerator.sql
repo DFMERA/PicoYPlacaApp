@@ -13,6 +13,10 @@ select Id 'PicoYPlacaRule.Id', Digit 'PicoYPlacaRule.Digit', "DayOfWeek" 'PicoYP
 from #PicoYPlaca
 for json path, root('PicoYPlacaRules')
 
+select *
+from #PicoYPlaca
+for json auto
+
 insert into #PicoYPlaca SELECT 1 Id, 1 Digit, 'Monday' "DayOfWeek", 7 "Hour", 0 "MinutesStart", 59 "MinutesEnd"
 insert into #PicoYPlaca SELECT 2 Id, 1 Digit, 'Monday' "DayOfWeek", 8 "Hour", 0 "MinutesStart", 59 "MinutesEnd"
 insert into #PicoYPlaca SELECT 3 Id, 1 Digit, 'Monday' "DayOfWeek", 9 "Hour", 0 "MinutesStart", 30 "MinutesEnd"
