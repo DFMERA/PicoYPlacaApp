@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <form enctype="multipart/form-data" method="post">
+        <h1 class="display-4">"Pico y Placa" Predictor</h1>
+        <input type="text" asp-for="picoYplacaInput.LicensePlate" />
+        <input type="datetime" asp-for="picoYplacaInput.Date" />
+        <input type="text" asp-for="picoYplacaInput.Time" />
+        <input type="submit" value="Predict" />
+        <input type="text" value="@Html.DisplayFor(model => model.picoYPlacaPrediction.Message)" />
+        <input type="hidden" value="@Html.DisplayFor(model => model.picoYPlacaPrediction.Code)" />
+        @{ 
+            var colorStyle = "red";
+            if(Model.picoYPlacaPrediction.Code==1)
+            {
+                colorStyle = "green";
+            }
+            else if (Model.picoYPlacaPrediction.Code == 2)
+            {
+                colorStyle = "yellow";
+            }
+            else if (Model.picoYPlacaPrediction.Code == 3)
+            {
+                colorStyle = "red";
+            }
+        }
+        <input type="text" style="background-color:@colorStyle" value="XX" />
+    </form>
+</div>
