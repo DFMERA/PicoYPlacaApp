@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicoYPlacaUtil", "PicoYPlac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicoYPlacaFront", "PicoYPlacaFront\PicoYPlacaFront.csproj", "{CF589153-C843-455B-BC26-096152FE66F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicoYPlacaServices.Test", "PicoYPlacaServices.Test\PicoYPlacaServices.Test.csproj", "{46BCF685-657C-40E2-9367-9F4B09C59AA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CF589153-C843-455B-BC26-096152FE66F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF589153-C843-455B-BC26-096152FE66F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF589153-C843-455B-BC26-096152FE66F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46BCF685-657C-40E2-9367-9F4B09C59AA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46BCF685-657C-40E2-9367-9F4B09C59AA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46BCF685-657C-40E2-9367-9F4B09C59AA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46BCF685-657C-40E2-9367-9F4B09C59AA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
