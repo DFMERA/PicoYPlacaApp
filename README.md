@@ -15,7 +15,7 @@ Once you added the file and run the PicoYPlacaService project a url of a REST AP
 The front end is a simple Razor Pages web app called PicoYPlacaFront.
 
 In order to run the web app localy you must copy the url of the Azure Functions microservice and paste it in the appsettings file in the next key:
-"AzureFunctionsUrl": "http://localhost:"
+"AzureFunctionsUrl": "AZURE_FUNCTION_URL"
 
 Once you added the key in the appsettings file you can run the PicoYPlacaFront project
 
