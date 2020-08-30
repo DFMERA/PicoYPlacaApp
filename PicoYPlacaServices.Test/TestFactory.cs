@@ -4,6 +4,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Primitives;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
 namespace PicoYPlacaServices.Test
 {
@@ -34,6 +36,9 @@ namespace PicoYPlacaServices.Test
             var context = new DefaultHttpContext();
             var request = context.Request;
             request.Query = new QueryCollection(CreateDictionary(queryStringKey, queryStringValue));
+            byte[] byteArray = Encoding.ASCII.GetBytes(queryStringValue);
+            MemoryStream stream = new MemoryStream(byteArray);
+            request.Body = stream;
             return request;
         }
 
