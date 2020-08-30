@@ -7,9 +7,11 @@ In order to run the solution localy you must follow this steps:
 The backend is an Azure Functions microservice called PicoYPlacaService.
 
 In order to run the microservice localy you must add a local.settings.json file (this file is not uploaded to the repository for security reasons)
+###
 ![](./imgs/CapturaLocalSettings.png)
 
 Once you added the file and run the PicoYPlacaService project a url of a REST API is gonna be created, you should copy the url and do not close the project.
+![](./imgs/CapturaAF.png)
 
 # FRONTEND
 The front end is a simple Razor Pages web app called PicoYPlacaFront.
