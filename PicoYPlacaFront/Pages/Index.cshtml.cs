@@ -15,10 +15,11 @@ namespace PicoYPlacaFront.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly IConfiguration _configuration;
+       
+        [BindProperty(SupportsGet = true)]
+        public PicoYPlacaInput PicoYPlacaInputs { get; set; }
+        public ResponseObj PicoYPlacaPrediction { get; set; }
 
-        public PicoYPlacaInput picoYplacaInput;
-        public ResponseObj picoYPlacaPrediction;
-        
         public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
         {
             _logger = logger;
@@ -27,20 +28,22 @@ namespace PicoYPlacaFront.Pages
 
         public void OnGet()
         {
-            picoYplacaInput = new PicoYPlacaInput()
+            PicoYPlacaInputs = new PicoYPlacaInput()
             {
                 LicensePlate = "ABC-123",
-                Date = DateTime.Now,
+                Date = "01/09/2020",
                 Time = "00:00"
             };
+
+            PicoYPlacaPrediction = new ResponseObj(0, "Enter the Values");
         }
 
         public async Task OnPostAsync()
         {
             string urlString = _configuration.GetSection("AzureFunctionsUrl").Value;
-            picoYPlacaPrediction = await Services.UtilServices.PostPicoYPlacaService(picoYplacaInput, urlString);
+            PicoYPlacaPrediction = await Services.UtilServices.PostPicoYPlacaService(PicoYPlacaInputs, urlString);
 
-            if(picoYPlacaPrediction.Code <0)
+            if(PicoYPlacaPrediction.Code <0)
             {
                 //TODO: redirect to an error page
             }

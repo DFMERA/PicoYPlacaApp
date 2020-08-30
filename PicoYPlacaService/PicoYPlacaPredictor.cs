@@ -34,9 +34,9 @@ namespace PicoYPlacaService
                 //license plate number (the full number, not the last digit), a date (as a String), and a time
                 string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
                 dynamic data = JsonConvert.DeserializeObject(requestBody);
-                string licensePlate = data?.licensePlate;
-                string date = data?.date;
-                string time = data?.time;
+                string licensePlate = data?.LicensePlate;
+                string date = data?.Date;
+                string time = data?.Time;
 
                 //name = name ?? data?.name;
 
@@ -80,7 +80,7 @@ namespace PicoYPlacaService
                 log.LogError(ex, ex.Message + '\n' + ex.StackTrace);
                 responseObj = new ResponseObj(-100, ex.Message);
             }
-            return new OkObjectResult(responseObj);
+            return new OkObjectResult(System.Text.Json.JsonSerializer.Serialize(responseObj));
         }
 
     }

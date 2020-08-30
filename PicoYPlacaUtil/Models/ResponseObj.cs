@@ -5,6 +5,10 @@ namespace PicoYPlacaUtil.Models
 {
     public class ResponseObj
     {
+        public ResponseObj()
+        {
+           
+        }
         public ResponseObj(int code, string message)
         {
             Code = code;
