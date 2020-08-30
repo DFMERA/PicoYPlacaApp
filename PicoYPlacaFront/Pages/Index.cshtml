@@ -6,28 +6,51 @@
 
 <div class="text-center">
     <form enctype="multipart/form-data" method="post">
-        <h1 class="display-4">"Pico y Placa" Predictor</h1>
-        <input type="text" asp-for="picoYplacaInput.LicensePlate" />
-        <input type="datetime" asp-for="picoYplacaInput.Date" />
-        <input type="text" asp-for="picoYplacaInput.Time" />
-        <input type="submit" value="Predict" />
-        <input type="text" value="@Html.DisplayFor(model => model.picoYPlacaPrediction.Message)" />
-        <input type="hidden" value="@Html.DisplayFor(model => model.picoYPlacaPrediction.Code)" />
-        @{ 
-            var colorStyle = "withe";
-            if(Model.picoYPlacaPrediction.Code==1)
+        <div class="container">
+            <h1 class="display-4">"Pico y Placa" Predictor</h1>
+            <div class="row">
+                <div class="col-2">License Plate</div>
+                <div class="col-4">
+                    <input type="text" asp-for="PicoYPlacaInputs.LicensePlate" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">Date</div>
+                <div class="col-4">
+                    <input type="text" asp-for="PicoYPlacaInputs.Date" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2">Time</div>
+                <div class="col-4">
+                    <input type="text" asp-for="PicoYPlacaInputs.Time" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <input type="submit" value="Predict" />
+                </div>
+            </div>
+        </div>
+        <div class="col-2">@Html.DisplayFor(model => model.PicoYPlacaPrediction.Message)</div>
+        <input type="hidden" value="@Html.DisplayFor(model => model.PicoYPlacaPrediction.Code)" />
+        @{
+            var colorStyle = "white";
+            if (Model.PicoYPlacaPrediction.Code == 1)
             {
                 colorStyle = "green";
             }
-            else if (Model.picoYPlacaPrediction.Code == 2)
+            else if (Model.PicoYPlacaPrediction.Code == 2)
             {
                 colorStyle = "yellow";
             }
-            else if (Model.picoYPlacaPrediction.Code == 3)
+            else if (Model.PicoYPlacaPrediction.Code == 3)
             {
                 colorStyle = "red";
             }
         }
-        <input type="text" style="background-color:@colorStyle" value="XX" />
-    </form>
+    <div class="col-2"><input type="text" style="background-color:@colorStyle" value="" /></div>
+
+</form>
+
 </div>
